@@ -12,21 +12,6 @@ A simple Alfred workflow that allows you to search CSS color names and copy thei
 
 <img src="screenshots/screenshot-color-blue.png" width="500" />
 
-## Setup
-
-1. Install Pillow:
-   `pip3 install pillow`
-   `brew install pillow`
-
-2. In your Script Filter:
-
-    - Language: /bin/bash - with input as {query}
-    - Script:
-      /opt/homebrew/bin/python3 "$PWD/colorname.py" "{query}"
-
-3. In your Copy to Clipboard
-    - Type: Plain Text - Match destination formatting on paste
-        - {query}
 
 ## Example
 

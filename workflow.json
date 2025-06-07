@@ -1,0 +1,20 @@
+{
+    "name": "ColorName to HEX",
+    "bundleId": "com.seonyworld.alfred.colortohex",
+    "description": "Search CSS color names and copy their corresponding HEX codes. Each result also shows a circular color preview.",
+    "category": "Tools",
+    "creator": "Jinseon Yoo",
+    "github": "https://github.com/seonyworld/alfred-colortohex",
+    "download": "https://github.com/seonyworld/alfred-colornamehex/releases/latest/download/ColorName_to_Hex.alfredworkflow",
+    "created": "2025-06-07",
+    "updated": "2025-06-07",
+    "platforms": ["macOS"],
+    "tags": ["color", "css", "hex", "design", "visual"],
+    "dependencies": ["python3", "Pillow"],
+    "readme": "https://github.com/seonyworld/alfred-colortohex/blob/main/README.md",
+    "workflow": {
+        "type": "Script Filter",
+        "language": "Python",
+        "entry": "colorname.py"
+    }
+}

@@ -13,22 +13,6 @@ A simple Alfred workflow that allows you to search CSS color names and copy thei
 <img src="screenshots/screenshot-color-blue.png" width="500" />
 
 
-## Setup
-
-1. Install Pillow:
-   `pip3 install pillow`
-   `brew install pillow`
-
-2. In your Script Filter:
-
-    - Language: /bin/bash - with input as {query}
-    - Script:
-      /opt/homebrew/bin/python3 "$PWD/colorname.py" "{query}"
-
-3. In your Copy to Clipboard
-    - Type: Plain Text - Match destination formatting on paste
-        - {query}
-
 ## How it works
 
 -   All valid CSS color names and their HEX codes are stored in a dictionary in `colorname.py`
@@ -44,9 +28,3 @@ Will display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.
 By selecting, the HEX value will be copied to your clipboard.
 
 <img src="screenshots/screenshot-color-pink.png" width="500" />
-
-## Notes
-
--   Only relative icon paths work in Alfred (e.g., icons/pink.png)
--   Make sure `{query}` is enclosed in double quotes and passed correctly from the Script Filter
--   If no result is shown, check if the query is being passed (log `sys.argv` inside the script)

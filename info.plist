@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.seonyworld.alfred.colortohex</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>27307855-E75C-47FD-8FF6-7B7912D22E81</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F9B7A37D-DB7B-4409-B8FB-9BBD13B133CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jinseon Yoo</string>
+	<key>description</key>
+	<string>Convert color name to hex and copy to clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ColorName to Hex</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F9B7A37D-DB7B-4409-B8FB-9BBD13B133CD</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>103</integer>
+				<key>keyword</key>
+				<string>color</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>/opt/homebrew/bin/python3 "$PWD/colorname.py" "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>27307855-E75C-47FD-8FF6-7B7912D22E81</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Color Name to Hex – Alfred Workflow
+
+A simple Alfred workflow that allows you to search CSS color names and copy their HEX values with a circular color preview icon.
+
+## Features
+
+- Type `color pink`, `color red`, etc. to search for a named CSS color
+- Displays a circular thumbnail preview for each color
+- Press Enter to copy the HEX code to clipboard
+
+![example-image](alfred-readme-img.png)
+
+
+## Setup
+
+1. Install Pillow:
+    `pip3 install pillow`
+	`brew install pillow`
+
+2. In your Script Filter:
+    - Language: /bin/bash
+    		- with input as {query} 
+    - Script:
+        /opt/homebrew/bin/python3 "$PWD/colorname.py" "{query}"
+
+3. In your Copy to Clipboard
+	- Type: Plain Text - Match destination formatting on paste
+		- {query}
+
+## How it works
+
+- All valid CSS color names and their HEX codes are stored in a dictionary in `colorname.py`
+- When you search, the script filters for matching names and dynamically generates a circular PNG thumbnail for each result
+- The thumbnail is stored in the `icons/` folder in the same directory as your script
+- Alfred displays the color name and HEX code, and copies the HEX value on selection
+
+
+## Example
+
+Typing: `color pink`
+
+Will display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.
+By selecting, the HEX value will be copied to your clipboard.
+
+
+## Notes
+
+- Only relative icon paths work in Alfred (e.g., icons/pink.png)
+- Make sure `{query}` is enclosed in double quotes and passed correctly from the Script Filter
+- If no result is shown, check if the query is being passed (log `sys.argv` inside the script)</string>
+	<key>uidata</key>
+	<dict>
+		<key>27307855-E75C-47FD-8FF6-7B7912D22E81</key>
+		<dict>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>F9B7A37D-DB7B-4409-B8FB-9BBD13B133CD</key>
+		<dict>
+			<key>xpos</key>
+			<real>635</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>color</string>
+				<key>placeholder</key>
+				<string>color</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword you will use before the color names.</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>color</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Pillow (formerly PIL - Python Imaging Library) is a free and open-source library used for manipulating and processing images</string>
+			<key>label</key>
+			<string>Installed "Pillow"</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>seonyworld.com</string>
+</dict>
+</plist>

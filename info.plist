@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.seonyworld.alfred.colortohex</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CF18842-2148-488D-A50E-F08B37AF3AB6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>27307855-E75C-47FD-8FF6-7B7912D22E81</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jinseon Yoo</string>
+	<key>description</key>
+	<string>Convert color name to hex and copy to clipboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Color Name to Hex</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query} copied to clipboard!</string>
+				<key>title</key>
+				<string>🎨 HEX Copied!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0CF18842-2148-488D-A50E-F08B37AF3AB6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>103</integer>
+				<key>keyword</key>
+				<string>{var:color}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Converting color...</string>
+				<key>script</key>
+				<string>/usr/bin/python3 "$PWD/colorname.py" "$1"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>ex) white → #ffffff</string>
+				<key>title</key>
+				<string>Enter a color name</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>27307855-E75C-47FD-8FF6-7B7912D22E81</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Color Name to Hex – Alfred Workflow
+
+A simple Alfred workflow that allows you to search CSS color names and copy their HEX values with a circular color preview icon.
+
+## Features
+
+- Type `color pink`, `color blue`, etc. to search for a named CSS color
+- Displays a circular thumbnail preview for each color
+- Press Enter to copy the HEX code to clipboard
+
+![example-image](screenshot-color-blue.png)
+
+
+## Example
+
+Typing: `color pink`
+
+Will display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.
+By selecting, the HEX value will be copied to your clipboard.
+
+![example-image2](screenshot-color-pink.png)</string>
+	<key>uidata</key>
+	<dict>
+		<key>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</key>
+		<dict>
+			<key>xpos</key>
+			<real>640</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>0CF18842-2148-488D-A50E-F08B37AF3AB6</key>
+		<dict>
+			<key>xpos</key>
+			<real>855</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>27307855-E75C-47FD-8FF6-7B7912D22E81</key>
+		<dict>
+			<key>xpos</key>
+			<real>410</real>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>color</string>
+				<key>placeholder</key>
+				<string>color</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>The keyword used to search color names.</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>color</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict>
+		<key>Keyword</key>
+		<string>{var:color}</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/seonyworld/alfred-colortohex</string>
+</dict>
+</plist>

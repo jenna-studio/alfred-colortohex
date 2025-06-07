@@ -8,7 +8,8 @@ A simple Alfred workflow that allows you to search CSS color names and copy thei
 -   Displays a circular thumbnail preview for each color
 -   Press Enter to copy the HEX code to clipboard
 
-![alfred-readme-img.png](https://i.postimg.cc/fbz2X0dk/alfred-readme-img.png)
+<img width="571" alt="alfred-readme-img" src="https://github.com/user-attachments/assets/839f635a-efdd-4f63-a1bc-fa6c37759956" />
+
 
 ## Setup
 

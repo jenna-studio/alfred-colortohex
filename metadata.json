@@ -1,0 +1,13 @@
+{
+  "alfredworkflow" : {
+    "category" : "Tools",
+    "readme" : "# Color Name to Hex – Alfred Workflow\n\nA simple Alfred workflow that allows you to search CSS color names and copy their HEX values with a circular color preview icon.\n\n## Features\n\n- Type `color pink`, `color blue`, etc. to search for a named CSS color\n- Displays a circular thumbnail preview for each color\n- Press Enter to copy the HEX code to clipboard\n\n![example-image](screenshot-color-blue.png)\n\n\n## Setup\n\n1. Install Pillow:\n    `pip3 install pillow`\n\t`brew install pillow`\n\n2. In your Script Filter:\n    - Language: \/bin\/bash\n    \t\t- with input as {query} \n    - Script:\n        \/opt\/homebrew\/bin\/python3 \"$PWD\/colorname.py\" \"{query}\"\n\n3. In your Copy to Clipboard\n\t- Type: Plain Text - Match destination formatting on paste\n\t\t- {query}\n\n## How it works\n\n- All valid CSS color names and their HEX codes are stored in a dictionary in `colorname.py`\n- When you search, the script filters for matching names and dynamically generates a circular PNG thumbnail for each result\n- The thumbnail is stored in the `icons\/` folder in the same directory as your script\n- Alfred displays the color name and HEX code, and copies the HEX value on selection\n\n\n## Example\n\nTyping: `color pink`\n\nWill display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.\nBy selecting, the HEX value will be copied to your clipboard.\n\n![example-image2](screenshot-color-pink.png)\n\n\n## Notes\n\n- Only relative icon paths work in Alfred (e.g., icons\/pink.png)\n- Make sure `{query}` is enclosed in double quotes and passed correctly from the Script Filter\n- If no result is shown, check if the query is being passed (log `sys.argv` inside the script)",
+    "createdby" : "Jinseon Yoo",
+    "downloadurl" : "",
+    "version" : "1.0.0",
+    "bundleid" : "com.seonyworld.alfred.colortohex",
+    "description" : "Convert color name to hex and copy to clipboard",
+    "name" : "ColorName to Hex",
+    "webaddress" : "https:\/\/github.com\/seonyworld\/alfred-colortohex"
+  }
+}

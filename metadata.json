@@ -1,13 +1,13 @@
 {
   "alfredworkflow" : {
     "category" : "Tools",
-    "readme" : "# Color Name to Hex – Alfred Workflow\n\nA simple Alfred workflow that allows you to search CSS color names and copy their HEX values with a circular color preview icon.\n\n## Features\n\n- Type `color pink`, `color blue`, etc. to search for a named CSS color\n- Displays a circular thumbnail preview for each color\n- Press Enter to copy the HEX code to clipboard\n\n![example-image](screenshot-color-blue.png)\n\n\n## Example\n\nTyping: `color pink`\n\nWill display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.\nBy selecting, the HEX value will be copied to your clipboard.\n\n![example-image2](screenshot-color-pink.png)",
+    "readme" : "# Color Name to Hex – Alfred Workflow\n\nA simple Alfred workflow that allows you to search CSS color names and copy their HEX values with a circular color preview icon.\n\n## Features\n\n- Type `color pink`, `color blue`, etc. to search for a named CSS color\n- Displays a circular thumbnail preview for each color\n- Press Enter to copy the HEX code to clipboard\n\n![example-image](screenshot-color-blue.png)",
     "createdby" : "Jinseon Yoo",
     "downloadurl" : "",
     "version" : "1.0.0",
-    "bundleid" : "com.seonyworld.alfred.colortohex",
+    "bundleid" : "dev.jenna-studio.alfred.colortohex",
     "description" : "Convert color name to hex and copy to clipboard",
-    "name" : "ColorName to Hex",
-    "webaddress" : "https:\/\/github.com\/seonyworld\/alfred-colortohex"
+    "name" : "Color Name to Hex",
+    "webaddress" : "https://github.com/jenna-studio/alfred-colortohex"
   }
 }

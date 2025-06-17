@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.seonyworld.alfred.colortohex</string>
+	<string>dev.jenna-studio.alfred.colortohex</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -69,6 +69,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -94,7 +113,7 @@
 				<key>runningsubtext</key>
 				<string>Converting color...</string>
 				<key>script</key>
-				<string>/usr/bin/python3 "$PWD/colorname.py" "$1"
+				<string>python3 "$PWD/colorname.py" "$1"
 </string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -116,25 +135,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># Color Name to Hex – Alfred Workflow
@@ -147,17 +147,7 @@ A simple Alfred workflow that allows you to search CSS color names and copy thei
 - Displays a circular thumbnail preview for each color
 - Press Enter to copy the HEX code to clipboard
 
-![example-image](screenshot-color-blue.png)
-
-
-## Example
-
-Typing: `color pink`
-
-Will display: `#ffc0cb – copy HEX for 'pink'` With a pink circular thumbnail.
-By selecting, the HEX value will be copied to your clipboard.
-
-![example-image2](screenshot-color-pink.png)</string>
+![example-image](screenshot-color-blue.png)</string>
 	<key>uidata</key>
 	<dict>
 		<key>081A3C11-8491-49A3-ACBB-6C76EC9E1EA7</key>
@@ -211,11 +201,9 @@ By selecting, the HEX value will be copied to your clipboard.
 		<key>Keyword</key>
 		<string>{var:color}</string>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string>https://github.com/seonyworld/alfred-colortohex</string>
+	<string>https://github.com/jenna-studio/alfred-colortohex</string>
 </dict>
 </plist>
